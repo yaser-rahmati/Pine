@@ -3,7 +3,7 @@
 // https://www.tradingview.com/u/yaser_rahmati/
 //@version=4
 
-study("YAS-simple-bullish-bearish-screener", overlay = true)
+study("YAS-Simple-Bullish-Bearish-Screener", overlay = true)
 
 a = ema(close , 7)
 b = ema(close , 14)

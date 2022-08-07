@@ -1,28 +1,10 @@
 // © yaser_rahmati
 // https://twitter.com/RahmatyYas
 // https://www.tradingview.com/u/yaser_rahmati/
-
-
-A. The Heikin-Ashi Formula
-	1. Normal candlestick charts are composed of a series of open-high-low-close (OHLC) candles set apart by a time series.
-	2. The Heikin-Ashi technique shares some characteristics with standard candlestick charts but uses a modified formula of close-open-high-low (COHL):
-	3. Close= 0.25 *(Open+High+Low+Close)
-	4. Open= 0.5 * (Open.of.Prev.Bar + Close.of.Prev.Bar)
-	5. High= Max{High, Open, Close}
-	6. Low= Min{Low, Open, Close}
-
-
-B. There are five primary signals that identify trends and buying opportunities:
-	1. Hollow or green candles with no lower "shadows" indicate a strong uptrend: Let your profits ride!
-	2. Hollow or green candles signify an uptrend: You might want to add to your long position and exit short positions.
-	3. Candles with a small body surrounded by upper and lower shadows indicate a trend change: Risk-loving traders might buy or sell here, while others will wait for confirmation before going long or short.
-	4. Filled or red candles indicate a downtrend: You might want to add to your short position and exit long positions.
-	5. Filled or red candles with no higher shadows identify a strong downtrend: Stay short until there's a change in trend.
-
-
-C. Pine Script
 //@version=4
-study("YAS Heikin Ashi", overlay=true)
+
+
+study("YAS-Heikin-Ashi", overlay=true)
 
 closeh = 0.25 * (open + close + high + low)
 openh = 0.5 * (open[1] + close[1])

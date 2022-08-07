@@ -1,8 +1,9 @@
 // © yaser_rahmati
 // https://twitter.com/RahmatyYas
 // https://www.tradingview.com/u/yaser_rahmati/
-
 //@version=4
+
+
 study("YAS-TREND-FOLLOWER", overlay = true)
 
 sensivity = input(defval = 10 , type = input.integer , minval = 2)
