@@ -1,0 +1,22 @@
+// © yaser_rahmati
+// https://twitter.com/RahmatyYas
+// https://www.tradingview.com/u/yaser_rahmati/
+//@version=4
+
+study("Modified Heikin-Ashi Formula", overlay = true)
+
+closeh = (open + 2*close + low + high)/5
+openh = (open[1] + close[1] + open[2] + close[2] + open[3] + close[3] + open[4] + close[4])/8
+
+clr = color.blcak
+
+var ccount = 0
+if closeh > openh  
+	clr := color.green
+	ccount := ccount + 1
+	label.new(bar_index , high , text=tostring(f))
+if closeh < openh  
+	clr := color.red 
+	ccount := 0
+	
+plotcandle(openh , high , low , closeh , color = clr , wickcolor = clr , bordercolor = clr)
