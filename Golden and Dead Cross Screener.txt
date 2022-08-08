@@ -1,8 +1,9 @@
 // © yaser_rahmati
-
-
+// https://twitter.com/RahmatyYas
+// https://www.tradingview.com/u/yaser_rahmati/
 //@version=4
-study("STRATEGY-GOLDEN-DEAD-CROSS", overlay = true)
+
+study("GOLDEN-DEAD-CROSS", overlay = true)
 
 // Body Code
 a = sma ( close , 50 )
