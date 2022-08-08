@@ -1,0 +1,16 @@
+// © yaser_rahmati
+
+
+//@version=4
+study("STRATEGY-GOLDEN-DEAD-CROSS", overlay = true)
+
+// Body Code
+a = sma ( close , 50 )
+b = sma ( close , 200)
+
+buy = crossover(a , b)
+sell = crossunder(a , b)
+
+plotshape(buy , style=shape.triangleup , color=color.green, text="Golen Cross" , textcolor=color.green, location=location.belowbar)
+plotshape(sell , style=shape.triangledown , color=color.red, text="Dead Cross" , textcolor=color.red, location=location.abovebar)
+	
