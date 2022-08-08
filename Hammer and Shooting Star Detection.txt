@@ -1,0 +1,29 @@
+// © yaser_rahmati
+// https://twitter.com/RahmatyYas
+// https://www.tradingview.com/u/yaser_rahmati/
+//@version=4
+
+study("YAS-HAM-SHOOTING.STARS" , overlay = true)
+
+// Get User Input
+fibLevel = input(title = "Fib Level" , type = input.float , defval = 0.333)
+colorFilter = input(title = "Color Must Match" , type = input.bool , defval = false)
+
+// Calculate fibonacci level for current candle
+bullFib = (low - high)*fibLevel + high
+bearFib = (high - low)*fibLevel + low
+
+// Determine which price source closes or opens highest/lowest
+lowestBody = close<open ? close : open
+highestBody = close>open ? close : open
+
+// Determine if we have a valid hammer or shooting star
+hammerCandle = lowestBody >= bullFib
+starCandle = highestBody <= bearFib
+
+// Plot the signals to the chart
+plotshape(hammerCandle, style=shape.arrowup, location=location.belowbar, color=color.green, text="HA", textcolor=color.green)
+plotshape(starCandle, style=shape.arrowdown, location=location.abovebar, color=color.red, text="SH", textcolor=color.red)
+
+// Trigger alerts
+alertcondition(hammerCandle or starCandle, title="Hammer or Shooting Star Alert", message="{{ticker}}")
