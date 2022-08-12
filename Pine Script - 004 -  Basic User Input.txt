@@ -1,0 +1,18 @@
+// Sample Pine Script
+// © yaser_rahmati
+// https://www.tradingview.com/u/yaser_rahmati/
+// https://twitter.com/RahmatyYas
+
+
+//@version=5
+indicator("Variable Declaration")
+
+var greenCandleCount = 0
+drawshape = false
+
+if close > open 
+    greenCandleCount := greenCandleCount + 1
+    drawshape := true
+
+plot(greenCandleCount)
+plotshape(drawshape)

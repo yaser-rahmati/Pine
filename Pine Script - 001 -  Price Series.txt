@@ -1,0 +1,32 @@
+// Sample Pine Script
+// © yaser_rahmati
+// https://www.tradingview.com/u/yaser_rahmati/
+// https://twitter.com/RahmatyYas
+
+//@version=5
+indicator("Price Series")
+
+
+// Get price data
+candleOpen = open
+candleHigh = high
+candleLow = low
+candleClose = close
+
+// Analyze price data
+candleSize = high - low
+candleSize10 = high[10] - low[10]
+candleSizeRatio = candleSize/candleSize10
+
+atr = ta.atr(14)
+atr10 = atr[10]
+atrRatio = atr/atr10
+
+// Draw candle data onto our chart
+plot(candleOpen, color=color.blue)
+plot(candleHigh, color=color.red)
+plot(candleLow, color=color.green)
+plot(candleClose, color=color.purple)
+plot(candleSize, color=color.orange)
+plot(candleSizeRatio, color=color.purple)
+

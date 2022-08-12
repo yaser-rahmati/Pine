@@ -1,0 +1,22 @@
+// Sample Pine Script
+// © yaser_rahmati
+// https://www.tradingview.com/u/yaser_rahmati/
+// https://twitter.com/RahmatyYas
+
+//@version=5
+indicator("Data Type")
+
+intergerType = 20
+floatType = 33.3
+floatTypeE = 0.1e2
+boolType = false
+colorType = color.rgb(0, 255, 0, 50)
+stringType = "Text"
+
+if boolType
+    colorType := color.red
+
+
+plot(intergerType, color=colorType)
+plot(floatType, color=color.white)
+plot(floatTypeE, color=color.red)

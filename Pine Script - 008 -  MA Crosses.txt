@@ -1,0 +1,23 @@
+// Sample Pine Script
+// © yaser_rahmati
+// https://www.tradingview.com/u/yaser_rahmati/
+// https://twitter.com/RahmatyYas
+
+//@version=5
+indicator("MA Crosses", overlay=true)
+
+// Gets MAs
+ema1 = ta.ema(close,50)
+ema2 = ta.ema(close,100)
+
+// Get Crosses
+maCrossOver = ta.crossover(ema1, ema2)
+maCrossUnder = ta.crossunder(ema1, ema2)
+
+// Draw MAs
+plot(ema1, color=color.green)
+plot(ema2, color=color.red)
+
+// Draw Crosses
+bgcolor(maCrossOver? color.green : na)
+bgcolor(maCrossUnder? color.red : na)

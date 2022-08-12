@@ -1,0 +1,32 @@
+// Sample Pine Script
+// © yaser_rahmati
+// https://www.tradingview.com/u/yaser_rahmati/
+// https://twitter.com/RahmatyYas
+
+//@version=4
+study("Bitcoin Dominance" , shorttitle="BTC.D" , overlay = true)
+
+// Critical Level of BTC.D Chart
+
+// Defining The Critical Level in Long Term Time Frame
+critical_level_01=100
+critical_level_02=71.31
+critical_level_03=57.77
+critical_level_04=49.79
+critical_level_05=39.55
+critical_level_06=0
+
+region_01 = hline(critical_level_01 , color=color.black , linestyle=hline.style_dotted , linewidth = 4)
+region_02 = hline(critical_level_02 , color=color.black , linestyle=hline.style_dotted , linewidth = 4)
+region_03 = hline(critical_level_03 , color=color.black , linestyle=hline.style_dotted , linewidth = 4)
+region_04 = hline(critical_level_04 , color=color.black , linestyle=hline.style_dotted , linewidth = 4)
+region_05 = hline(critical_level_05 , color=color.black , linestyle=hline.style_dotted , linewidth = 4)
+region_06 = hline(critical_level_06 , color=color.black , linestyle=hline.style_dotted , linewidth = 4)
+
+fill(region_01 , region_02 , color.new(color.green, 85))
+fill(region_02 , region_03 , color.new(color.silver, 85))
+fill(region_03 , region_04 , color.new(color.purple, 85))
+fill(region_04 , region_05 , color.new(color.yellow, 85))
+fill(region_05 , region_06 , color.new(color.red, 85))
+
+plot(close,display=display.none)

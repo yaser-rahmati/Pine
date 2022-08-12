@@ -1,0 +1,25 @@
+// Sample Pine Script
+// © yaser_rahmati
+<<<<<<< HEAD:Pine Script - 015 -  Golden or Dead Cross.txt
+// https://www.tradingview.com/u/yaser_rahmati/
+// https://twitter.com/RahmatyYas
+
+//@version=4
+study("Golden or Dead Cross Screnner", overlay = true)
+=======
+// https://twitter.com/RahmatyYas
+// https://www.tradingview.com/u/yaser_rahmati/
+//@version=4
+
+study("GOLDEN-DEAD-CROSS", overlay = true)
+>>>>>>> 12a9fcebc4ea6ff40c46dfdf55f01bc998f1b58c:Golden and Dead Cross Screener.txt
+
+// Body Code
+a = sma ( close , 50 )
+b = sma ( close , 200)
+
+buy = crossover(a , b)
+sell = crossunder(a , b)
+
+plotshape(buy , style=shape.triangleup , color=color.green, text="Golen Cross" , textcolor=color.green, location=location.belowbar)
+plotshape(sell , style=shape.triangledown , color=color.red, text="Dead Cross" , textcolor=color.red, location=location.abovebar)

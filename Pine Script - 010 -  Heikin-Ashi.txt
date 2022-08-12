@@ -1,0 +1,19 @@
+// © yaser_rahmati
+// Sample Pine Script 
+// Written By: Yaser Rahmati
+// https://www.tradingview.com/u/yaser_rahmati/
+// Twitter: @RahmatyYas
+
+//@version=4
+study("Heikin Ashi", overlay=true)
+
+// heikin ashi formula
+closeHA = 0.25 * (open + close + high + low)
+openHA = 0.5 * (open[1] + close[1])
+
+buy = closeHA>openHA and closeHA[1]<openHA[1]
+plotshape(buy , style=shape.circle , location=location.belowbar, title="buy shape", color=color.green, text="Buy")
+
+sell = closeHA<openHA and closeHA[1]>openHA[1]
+plotshape(sell , style=shape.circle , location=location.abovebar, title="sell shape", color=color.red, text="Sell")
+ 

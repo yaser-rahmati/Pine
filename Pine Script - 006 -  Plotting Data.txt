@@ -1,0 +1,18 @@
+
+// Sample Pine Script
+// © yaser_rahmati
+// https://www.tradingview.com/u/yaser_rahmati/
+// https://twitter.com/RahmatyYas
+
+//@version=5
+indicator("Plotting Data", overlay= true)
+
+sma_9 = ta.sma(close, 9)
+sma_50 = ta.sma(close, 50)
+sma_100 = ta.sma(close, 100)
+ave = (high + close)/2
+
+plot(sma_9, title= "SMA-9", color=color.green, linewidth=2, style=plot.style_line, trackprice= true)
+plot(sma_50, title= "SMA-50", color=color.yellow, linewidth=2, style=plot.style_line, show_last=40)
+plot(sma_100, title= "SMA-100", color=color.new(color.red, 50), linewidth=2, style=plot.style_cross)
+plot(ave, title= "Average of High and Low", display=display.none)
